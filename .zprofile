@@ -11,4 +11,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+export PATH="$PATH:$(go env GOPATH)/bin"
+export GOPHERJS_GOROOT="$(go env GOROOT)"
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
