@@ -2,6 +2,7 @@ export CLICOLOR=1
 
 . "$HOME/.bash_aliases"
 . "$HOME/.bash_prompt"
+. "$HOME/.bash_functions"
 
 export LSCOLORS=exfxcxdxbxegedabagacad
 
