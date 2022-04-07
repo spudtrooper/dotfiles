@@ -12,6 +12,9 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+# pip is screwed up?
+export PYTHONPATH=/opt/homebrew/lib/python3.9/site-packages
+
 export PATH="$PATH:$(go env GOPATH)/bin"
 export GOPHERJS_GOROOT="$(go env GOROOT)"
 
