@@ -17,5 +17,6 @@ export PYTHONPATH=/opt/homebrew/lib/python3.9/site-packages
 
 export PATH="$PATH:$(go env GOPATH)/bin"
 export GOPHERJS_GOROOT="$(go env GOROOT)"
+export SUBLIST3R_PY=/Users/jeff/Projects/Sublist3r/sublist3r.py
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
