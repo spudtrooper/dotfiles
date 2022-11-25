@@ -6,8 +6,9 @@
 
 [alias]
 	co = checkout
-  br = branch
-  ci = commit
-  st = status
+  	br = branch
+  	ci = commit
+  	st = status
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	add-commit = !git add -A && git commit
