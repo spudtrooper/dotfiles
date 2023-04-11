@@ -7,3 +7,12 @@ function save_music_to_drive() {
   local f=$1
   cp $f  ~/Google\ Drive/My\ Drive/MyMusic/Jeff/
 }
+
+function loop_fs_usage() {
+  while [[ 1 ]]; do 
+    echo
+    date
+    sudo fs_usage -w -t 1 | awk '{print $NF}' | sort | uniq -c | sort -n
+    sleep 1
+  done
+}

@@ -13,6 +13,10 @@ alias goutil_install_local='pushd ~/Projects/goutil; ./scripts/install_local.sh;
 alias sublist3r='python /Users/jeff/Projects/Sublist3r/sublist3r.py'
 alias sublister='python /Users/jeff/Projects/Sublist3r/sublist3r.py'
 alias restart_mongodb='sudo brew services restart mongodb-community'
-alias tf='terraform'
 alias mynmap='nmap -A --osscan-guess -T4 -v -sV'
 alias myarp-scan='arp-scan --localnet'
+
+alias tf='terraform'
+alias tfw='terraform workspace'
+alias tfws='terraform workspace select'
+alias tfs='terraform state'
