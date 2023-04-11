@@ -23,3 +23,7 @@ function git_commit_push() {
   local msg="$@"
   git add-commit -m "$msg" && git push
 }
+
+function git_nudge() {
+  git_commit_push "nudge"
+}
