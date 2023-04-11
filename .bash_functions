@@ -1,3 +1,5 @@
+# -*- sh -*-
+
 function kill_on_port() {
   local port=$1
   lsof -i:$port |  grep -v PID | awk '{print $2}' | xargs kill -9
@@ -15,4 +17,9 @@ function loop_fs_usage() {
     sudo fs_usage -w -t 1 | awk '{print $NF}' | sort | uniq -c | sort -n
     sleep 1
   done
+}
+
+function git_commit_push() {
+  local msg="$@"
+  git add-commit -m "$msg" && git push
 }
