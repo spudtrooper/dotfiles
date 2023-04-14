@@ -20,3 +20,6 @@ export GOPHERJS_GOROOT="$(go env GOROOT)"
 export SUBLIST3R_PY=/Users/jeff/Projects/Sublist3r/sublist3r.py
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+HISTFILESIZE=10000000
+HISTSIZE=10000000
