@@ -19,11 +19,11 @@ function loop_fs_usage() {
   done
 }
 
-function git_commit_push() {
+function git-commit-push() {
   local msg="$@"
   git add-commit -m "$msg" && git push
 }
 
-function git_nudge() {
-  git_commit_push "nudge"
+function git-nudge() {
+  git-commit-push "nudge"
 }

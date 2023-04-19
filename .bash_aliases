@@ -20,3 +20,5 @@ alias tf='terraform'
 alias tfw='terraform workspace'
 alias tfws='terraform workspace select'
 alias tfs='terraform state'
+
+alias tshark='/Applications/Wireshark.app/Contents/MacOS/tshark'
