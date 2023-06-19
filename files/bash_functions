@@ -27,3 +27,15 @@ function git-commit-push() {
 function git-nudge() {
   git-commit-push "nudge"
 }
+
+function mov-to-mp3() {
+  local f=$1
+  local out="${f%.*}.mp3"
+  ffmpeg -i "$f" -map 0:a "$out"
+}
+
+function mov-to-wav() {
+  local f=$1
+  local out="${f%.*}.wav"
+  ffmpeg -i "$f" -map 0:a "$out"
+}
