@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for f in files/*; do
+for f in src/*; do
   dest="$HOME/.$(basename "$f")"
   cp $f $dest
 done

@@ -1,4 +1,4 @@
-# -*- sh -*-
+# -*- mode: sh -*-
 
 function kill_on_port() {
   local port=$1

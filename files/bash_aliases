@@ -1,4 +1,4 @@
-# -*- sh -*-
+# -*- mode: sh -*-
 
 alias cd..='cd ..'
 alias l='ls'

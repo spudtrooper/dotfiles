@@ -1,3 +1,5 @@
+# -*- mode: sh -*-
+
 export CLICOLOR=1
 
 if [[ -f "$HOME/.bash_localrc" ]]; then
