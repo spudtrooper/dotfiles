@@ -26,3 +26,4 @@ alias tfs='terraform state'
 alias tshark='/Applications/Wireshark.app/Contents/MacOS/tshark'
 
 alias b='bashgpt'
+alias chrome_incognito='open -na "Google Chrome" --args -incognito duckduckgo.com'
