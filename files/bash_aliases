@@ -17,6 +17,7 @@ alias mynmap='nmap -A --osscan-guess -T4 -v -sV'
 alias myarp-scan='arp-scan --localnet'
 alias nq='networkQuality'
 alias python='python3'
+alias pip='pip3'
 
 alias tf='terraform'
 alias tfw='terraform workspace'
