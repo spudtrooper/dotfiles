@@ -42,3 +42,14 @@ if [ -f "$HOME/apps/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/apps/g
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH=$PATH:$HOME/.cargo/bin
 fi
+
+# Creates an alias for every file in ~/.bash_functions.d with extension .sh using the
+# file name without extension as the alias name.
+for f in ~/.bash_functions.d/*.sh; do
+    if [[ -d $f ]]; then
+        continue
+    fi
+    alias_name="$(basename "$f")"
+    alias_name="${alias_name%.*}"
+    alias $alias_name="$f"
+done

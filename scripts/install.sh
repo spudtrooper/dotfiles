@@ -1,9 +1,30 @@
 #!/bin/sh
 
-for f in files/*; do
-  dest="$HOME/.$(basename "$f")"
-  cp $f $dest
-done
+function copy_files() {
+  for f in files/*; do
+    if [[ -d $f ]]; then
+      continue
+    fi
+    dest="$HOME/.$(basename "$f")"
+    cp $f $dest
+  done
+}
+
+function copy_bash_functions() {
+  # Create directory ~/.bash_functions.d if it doesn't exist
+  if [[ ! -d "$HOME/.bash_functions.d" ]]; then
+    mkdir "$HOME/.bash_functions.d"
+  fi
+  # Copy the files in files/bash_functions.d to ~/.bash_functions.d
+  for f in files/bash_functions.d/*; do
+    if [[ -d $f ]]; then
+      continue
+    fi
+    dest="$HOME/.bash_functions.d/$(basename "$f")"
+    cp $f $dest
+    chmod +x $dest
+  done
+}
 
 # Outputs the most likely file that is your main bash RC file.
 function rcfile() {
@@ -16,7 +37,14 @@ function rcfile() {
   fi
 }
 
-echo "Remember to run the following command:"
-echo
-echo "source $(rcfile)"
-echo
+function main() {
+  copy_files
+  copy_bash_functions
+
+  echo "Remember to run the following command for changes to take effect:"
+  echo
+  echo "source $(rcfile)"
+  echo
+}
+
+main
