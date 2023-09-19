@@ -31,3 +31,4 @@ alias chrome_incognito='open -na "Google Chrome" --args -incognito duckduckgo.co
 
 alias paths='echo $PATH | tr ":" "\n"'
 alias flush_dns_cache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias stealthcurl="node ~/Projects/spudtrooper/stealthcurl/index.js"
