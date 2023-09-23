@@ -56,11 +56,15 @@ function add_alias() {
 }
 
 function oldest() { 
-  find "$1" -type f -exec stat -f "%m %N" {} + | \
-    sort -n | head -n 1 | cut -f 2- -d " "; 
+  echo $(\
+    find "$1" -type f -exec stat -f "%m %N" {} + | \
+      sort -n | head -n 1 | cut -f 2- -d " "\
+  )
 }
 
 function newest() { 
-  find "$1" -type f -exec stat -f "%m %N" {} + | \
-    sort -nr | head -n 1 | cut -f 2- -d " "; 
+  echo $(
+    find "$1" -type f -exec stat -f "%m %N" {} + | \
+      sort -nr | head -n 1 | cut -f 2- -d " "\
+  )
 }
