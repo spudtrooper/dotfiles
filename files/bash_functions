@@ -68,3 +68,14 @@ function newest() {
       sort -nr | head -n 1 | cut -f 2- -d " "\
   )
 }
+
+function evaljs() {
+  local js_function="$1"
+
+  local json_input
+  read -r -d '' json_input
+
+  local result=$(echo "$json_input" | node -e "
+    console.log(($js_function)($json_input));
+  ")
+}
