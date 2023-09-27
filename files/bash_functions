@@ -77,9 +77,3 @@ function evaljs() {
 
   node -e "console.log(($js_function)($json_input));"
 }
-
-function nmap_all() {
-  local ips_str=$(arp-scan --localnet | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | tr '\n' ' ')
-  read -ra ips <<< "$ips_str"
-  nmap -A --osscan-guess -T4 -v -sV -Pn $ips
-}
