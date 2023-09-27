@@ -1,17 +1,25 @@
 #!/bin/sh
-
+#
+# Runs an nmap for all the local IPs
+#
 set -e
 
-arp-scan --localnet
-ips_str=$(arp-scan --localnet | \
+arp_scan=$(arp-scan --localnet 2>&1)
+echo "$arp_scan"
+ips_str=$(echo $arp_scan | \
   grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
   tr '\n' ' ' | \
   sort)
 read -ra ips <<< "$ips_str"
 
-echo "Scanning the following IPs:"
-for ip in "${ips[@]}"; do
-  echo " - $ip"
-done
+tmp_dir=$(mktemp -d)
 
-nmap -A --osscan-guess -T4 -v -sV -Pn "${ips[@]}"
+echo "${ips[@]}" | \
+  xargs -I {} -n 1 -P 30 sh -c \
+    "nmap -A --osscan-guess -T4 -v -sV {} | tee $tmp_dir/{}"
+
+for f in $tmp_dir/*; do
+  ip=$(basename $f)
+  echo "--- $ip"
+  grep /tcp "$f"
+done
