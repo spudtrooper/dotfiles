@@ -34,4 +34,5 @@ alias flush_dns_cache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSRespo
 alias stealthcurl="node ~/Projects/spudtrooper/stealthcurl/index.js"
 alias gh_repo_create='gh repo create --clone --public'
 alias abspath='readlink -f'
+alias trim="sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'"
 
