@@ -1,2 +1,9 @@
+# -*- mode: sh -*-
+#
+# Include this file in shell scripts, e.g:
+#  
+#   source ~/.bash_include
+#
+
 . ~/.bash_aliases
 . ~/.bash_functions
