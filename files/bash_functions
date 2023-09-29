@@ -19,22 +19,22 @@ function loop_fs_usage() {
   done
 }
 
-function git-commit-push() {
+function git_commit_push() {
   local msg="$@"
   git add-commit -m "$msg" && git push
 }
 
-function git-nudge() {
-  git-commit-push "nudge"
+function git_nudge() {
+  git_commit_push "nudge"
 }
 
-function mov-to-mp3() {
+function mov2mp3() {
   local f=$1
   local out="${f%.*}.mp3"
   ffmpeg -i "$f" -map 0:a "$out"
 }
 
-function mov-to-wav() {
+function mov2wav() {
   local f=$1
   local out="${f%.*}.wav"
   ffmpeg -i "$f" -map 0:a "$out"
