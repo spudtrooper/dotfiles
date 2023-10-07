@@ -37,5 +37,6 @@ alias abspath='readlink -f'
 alias trim="sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'"
 alias newproj='~/Projects/jeffpalm/newproj/run.sh'
 alias dotfiles_install='~/Projects/spudtrooper/dotfiles/scripts/install.sh'
+alias dotfiles_install='pushd ~/Projects/spudtrooper/dotfiles; ./scripts/install.sh; popd'
 alias dotfiles_install_and_commit='pushd ~/Projects/spudtrooper/dotfiles; ./scripts/install.sh; ./scripts/commit.sh; popd'
 
