@@ -20,9 +20,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 if [[ -d $BASHGPT/bin/Release ]]; then
     export PATH=$PATH:$BASHGPT/bin/Release
 fi
-
-# pip is screwed up?
-export PYTHONPATH=/opt/homebrew/lib/python3.9/site-packages
+if [[ -d "/opt/homebrew/opt/ruby/bin" ]]; then
+  export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+fi  
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
