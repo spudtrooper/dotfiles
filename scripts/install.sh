@@ -1,7 +1,7 @@
 #!/bin/sh
 
 function copy_files() {
-  for f in files/*; do
+  for f in src/*; do
     if [[ -d $f ]]; then
       continue
     fi
@@ -15,8 +15,8 @@ function copy_bash_functions() {
   if [[ ! -d "$HOME/.bash_functions.d" ]]; then
     mkdir "$HOME/.bash_functions.d"
   fi
-  # Copy the files in files/bash_functions.d to ~/.bash_functions.d
-  for f in files/bash_functions.d/*; do
+  # Copy the files in src/bash_functions.d to ~/.bash_functions.d
+  for f in src/bash_functions.d/*; do
     if [[ -d $f ]]; then
       continue
     fi
