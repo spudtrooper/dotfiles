@@ -22,7 +22,12 @@ if [[ -d $BASHGPT/bin/Release ]]; then
 fi
 if [[ -d "/opt/homebrew/opt/ruby/bin" ]]; then
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-fi  
+fi
+
+if [[ -d "$HOME/.rubies/ruby-master/bin" ]]; then
+  export PATH=$HOME/.rubies/ruby-master/bin:$PATH
+fi
+
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -32,10 +37,6 @@ fi
 export PATH="$PATH:$(go env GOPATH)/bin"
 export GOPHERJS_GOROOT="$(go env GOROOT)"
 export SUBLIST3R_PY=/Users/jeff/Projects/Sublist3r/sublist3r.py
-
-if [[ -d $HOME/.rubies/ruby-master ]]; then
-  export PATH=$HOME/.rubies/ruby-master:$PATH
-fi
 
 HISTFILESIZE=10000000
 HISTSIZE=10000000
