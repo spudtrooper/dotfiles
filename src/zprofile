@@ -34,7 +34,7 @@ export GOPHERJS_GOROOT="$(go env GOROOT)"
 export SUBLIST3R_PY=/Users/jeff/Projects/Sublist3r/sublist3r.py
 
 if [[ -d $HOME/.rubies/ruby-master ]]; then
-  export PATH=$PATH:$HOME/.rubies/ruby-master
+  export PATH=$HOME/.rubies/ruby-master:$PATH
 fi
 
 HISTFILESIZE=10000000
