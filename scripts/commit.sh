@@ -8,4 +8,4 @@ if [[ -z "$msg" ]]; then
 fi
 git add .
 git commit -m "$msg"
-open /Applications/GitHub\ Desktop.app
+git push
