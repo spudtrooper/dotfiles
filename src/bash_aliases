@@ -39,4 +39,6 @@ alias newproj='~/Projects/jeffpalm/newproj/scripts/run.sh'
 alias dotfiles_install='pushd ~/Projects/spudtrooper/dotfiles; ./scripts/install.sh; popd'
 alias dotfiles_install_and_commit='pushd ~/Projects/spudtrooper/dotfiles; ./scripts/install.sh; ./scripts/commit.sh; popd'
 alias gm='glow -p'
+alias glowp='glow -p'
+alias glowm='glow -p'
 
