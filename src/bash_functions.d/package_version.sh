@@ -11,7 +11,7 @@ if [[ $repo == *"github.com"* && $repo == *".git" ]]; then
   version=$(curl "$package_url" 2> /dev/null | jq -r ".version")
   echo $version
   exit 0
-else
-  echo "cannot handle repo: $repo"
-  exit 1
 fi
+
+echo "cannot handle repo: $repo"
+exit 1
