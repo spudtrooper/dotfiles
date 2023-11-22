@@ -10,11 +10,10 @@ ips_str=$(echo $arp_scan | \
   grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | \
   tr '\n' ' ' | \
   sort)
-read -ra ips <<< "$ips_str"
 
 tmp_dir=$(mktemp -d)
 
-echo "${ips[@]}" | \
+echo $ips_str | \
   xargs -I {} -n 1 -P 30 sh -c \
     "nmap -A --osscan-guess -T4 -v -sV {} | tee $tmp_dir/{}"
 
