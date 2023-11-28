@@ -41,4 +41,4 @@ alias dotfiles_install_and_commit='pushd ~/Projects/spudtrooper/dotfiles; ./scri
 alias gm='glow -p'
 alias glowp='glow -p'
 alias glowm='glow -p'
-
+alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
