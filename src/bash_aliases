@@ -43,3 +43,4 @@ alias glowp='glow -p'
 alias glowm='glow -p'
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | awk '{print \$2}'"
 alias invert_colors="convert -channel RGB -negate"
+alias opendroppoll='python /Users/jeff/Projects/github/opendrop/opendrop/__main__.py -d find'
