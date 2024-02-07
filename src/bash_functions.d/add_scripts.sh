@@ -14,14 +14,16 @@ cat <<EOF > "$dir/scripts/commit.sh"
 git add .
 git commit -m "update \$(date)" "\$@"
 EOF
+chmod +x "$dir/scripts/commit.sh"
 
 cat <<EOF > "$dir/scripts/push.sh"
 #!/bin/sh
 
-scripts=$(dirname $0)
+scripts=\$(dirname \$0)
 
-$scripts/commit.sh --allow-empty "$@"
+\$scripts/commit.sh --allow-empty "\$@"
 
 git push -u
 EOF
+chmod +x "$dir/scripts/push.sh"
 
