@@ -3,7 +3,7 @@
 export CLICOLOR=1
 
 if [[ -f "$HOME/.bash_localrc" ]]; then
-    . "$HOME"/.bash_localrc
+  . "$HOME"/.bash_localrc
 fi
 
 . "$HOME/.bash_aliases"
@@ -18,7 +18,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 if [[ -d $BASHGPT/bin/Release ]]; then
-    export PATH=$PATH:$BASHGPT/bin/Release
+  export PATH=$PATH:$BASHGPT/bin/Release
 fi
 if [[ -d "/opt/homebrew/opt/ruby/bin" ]]; then
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
@@ -28,11 +28,10 @@ if [[ -d "$HOME/.rubies/ruby-master/bin" ]]; then
   export PATH=$HOME/.rubies/ruby-master/bin:$PATH
 fi
 
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [ -d "$HOME/go/bin" ]; then
-    export PATH=$PATH:$HOME/go/bin
+  export PATH=$PATH:$HOME/go/bin
 fi
 export PATH="$PATH:$(go env GOPATH)/bin"
 export GOPHERJS_GOROOT="$(go env GOROOT)"
@@ -54,10 +53,15 @@ fi
 # Creates an alias for every file in ~/.bash_functions.d with extension .sh using the
 # file name without extension as the alias name.
 for f in ~/.bash_functions.d/*.sh; do
-    if [[ -d $f ]]; then
-        continue
-    fi
-    alias_name="$(basename "$f")"
-    alias_name="${alias_name%.*}"
-    alias $alias_name="$f"
+  if [[ -d $f ]]; then
+    continue
+  fi
+  alias_name="$(basename "$f")"
+  alias_name="${alias_name%.*}"
+  alias $alias_name="$f"
 done
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Applications/google-cloud-sdk/path.zsh.inc' ]; then . '/Applications/google-cloud-sdk/path.zsh.inc'; fi
+
+export PATH="$PATH:/Applications/google-cloud-sdk/bin"
