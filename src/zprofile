@@ -23,9 +23,11 @@ fi
 if [[ -d "/opt/homebrew/opt/ruby/bin" ]]; then
   export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 fi
-
 if [[ -d "$HOME/.rubies/ruby-master/bin" ]]; then
   export PATH=$HOME/.rubies/ruby-master/bin:$PATH
+fi
+if [[ -d "$HOME/.bun/bin" ]]; then
+  export PATH=$HOME/.bun/bin:$PATH
 fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
