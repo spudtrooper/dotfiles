@@ -2,13 +2,13 @@
 
 export CLICOLOR=1
 
-if [[ -f "$HOME/.bash_localrc" ]]; then
-  . "$HOME"/.bash_localrc
-fi
-
 . "$HOME/.bash_aliases"
 . "$HOME/.bash_prompt"
 . "$HOME/.bash_functions"
+
+if [[ -f "$HOME/.bash_localrc" ]]; then
+  . "$HOME"/.bash_localrc
+fi
 
 export LSCOLORS=exfxcxdxbxegedabagacad
 
