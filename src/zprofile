@@ -51,6 +51,12 @@ if [ -d "$HOME/.cargo/bin" ]; then
   export PATH=$PATH:$HOME/.cargo/bin
 fi
 
+if [[ -d "/opt/homebrew/opt/postgresql@16/bin" ]]; then
+  export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+fi
+
+echo 'export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"' >>~/.zshrc
+
 # Creates an alias for every file in ~/.bash_functions.d with extension .sh using the
 # file name without extension as the alias name.
 for f in ~/.bash_functions.d/*.sh; do
