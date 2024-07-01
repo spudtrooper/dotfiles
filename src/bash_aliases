@@ -47,3 +47,4 @@ alias opendroppoll='python /Users/jeff/Projects/github/opendrop/opendrop/__main_
 alias postgresql_start='brew services start postgresql@14'
 alias postgresql_stop='brew services stop postgresql@14'
 alias sumlines="awk '{ sum += \$1 } END { print sum }'"
+alias mypip="pip3 install --break-system-packages --user"
