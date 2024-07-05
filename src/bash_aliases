@@ -48,3 +48,4 @@ alias postgresql_start='brew services start postgresql@14'
 alias postgresql_stop='brew services stop postgresql@14'
 alias sumlines="awk '{ sum += \$1 } END { print sum }'"
 alias mypip="pip3 install --break-system-packages --user"
+alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs"
