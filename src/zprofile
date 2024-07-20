@@ -68,7 +68,7 @@ for f in ~/.bash_functions.d/*.sh; do
   alias $alias_name="$f"
   alias_name_with_hypens="${alias_name//_/-}"
   alias $alias_name_with_hypens="$f"
-  alais_name_no_spaces="${alias_name// /}"
+  alias_name_no_spaces="${alias_name// /}"
   alias $alias_name_no_spaces="$f"
 done
 
