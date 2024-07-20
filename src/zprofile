@@ -83,3 +83,5 @@ export PATH=$PYTHON_HOME/bin:$PATH
 if [[ -d "$HOME/anaconda3/bin" ]]; then
   export PATH="$HOME/anaconda3/bin:$PATH"
 fi
+
+export HISTSIZE=10000
