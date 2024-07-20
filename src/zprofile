@@ -70,8 +70,8 @@ for f in ~/.bash_functions.d/*.sh; do
   alias $alias_name_with_hypens="$f"
   alias_name_with_underscores="${alias_name//-/_}"
   alias $alias_name_with_underscores="$f"
-  alias_name_no_spaces="${alias_name/ //}"
-  alias $alias_name_no_spaces="$f"
+  alias_name_alphanum="$(echo $alias_name | sed 's/[_-]//g')"
+  alias $alias_name_alphanum="$f"
 done
 
 # The next line updates PATH for the Google Cloud SDK.
