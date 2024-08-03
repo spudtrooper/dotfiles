@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Check if a directory was provided as an argument
 DIR=.
 if [ ! -z "$1" ]; then
   DIR=$1
