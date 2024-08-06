@@ -1,5 +1,5 @@
 #!/bin/sh
 
 for f in "$@"; do
-  mv "$f" "$(echo $f | tr -d ' ')"
+  mv "$f" "$(echo $f | sed 's/[  ]//g')"
 done
