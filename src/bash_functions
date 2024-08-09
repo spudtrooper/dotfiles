@@ -2,16 +2,21 @@
 
 function kill_on_port() {
   local port=$1
-  lsof -i:$port |  grep -v PID | awk '{print $2}' | xargs kill -9
+  lsof -i:$port | grep -v PID | awk '{print $2}' | xargs kill -9
+}
+
+function whats_on_port() {
+  local port=$1
+  lsof -i:$port
 }
 
 function save_music_to_drive() {
   local f=$1
-  cp $f  ~/Google\ Drive/My\ Drive/MyMusic/Jeff/
+  cp $f ~/Google\ Drive/My\ Drive/MyMusic/Jeff/
 }
 
 function loop_fs_usage() {
-  while [[ 1 ]]; do 
+  while [[ 1 ]]; do
     echo
     date
     sudo fs_usage -w -t 1 | awk '{print $NF}' | sort | uniq -c | sort -n
@@ -41,31 +46,31 @@ function mov2wav() {
 }
 
 function HISTORY() {
-    if [[ "$SHELL" == *"/zsh"* ]]; then
-        fc -ln -1
-    elif command -v history &> /dev/null; then
-        history
-    else
-        echo "Error: history command not found and you're not using zsh."
-    fi
+  if [[ "$SHELL" == *"/zsh"* ]]; then
+    fc -ln -1
+  elif command -v history &>/dev/null; then
+    history
+  else
+    echo "Error: history command not found and you're not using zsh."
+  fi
 }
 
 function add_alias() {
-    local alias_name=$1
-    echo "alias $alias_name='$(HISTORY | tail -n 1)'" >> ~/.bash_aliases
+  local alias_name=$1
+  echo "alias $alias_name='$(HISTORY | tail -n 1)'" >>~/.bash_aliases
 }
 
-function oldest() { 
-  echo $(\
-    find "$1" -type f -exec stat -f "%m %N" {} + | \
-      sort -n | head -n 1 | cut -f 2- -d " "\
+function oldest() {
+  echo $(
+    find "$1" -type f -exec stat -f "%m %N" {} + |
+      sort -n | head -n 1 | cut -f 2- -d " "
   )
 }
 
-function newest() { 
+function newest() {
   echo $(
-    find "$1" -type f -exec stat -f "%m %N" {} + | \
-      sort -nr | head -n 1 | cut -f 2- -d " "\
+    find "$1" -type f -exec stat -f "%m %N" {} + |
+      sort -nr | head -n 1 | cut -f 2- -d " "
   )
 }
 
