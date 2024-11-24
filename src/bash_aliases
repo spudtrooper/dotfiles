@@ -57,3 +57,4 @@ alias tshark="/Applications/Wireshark.app/Contents/MacOS/tshark"
 alias gh_new_repo="gh_repo_new"
 alias myip='ipconfig getifaddr en0'
 alias my_public_ip='curl ifconfig.me'
+alias mypublicip='curl ifconfig.me'
