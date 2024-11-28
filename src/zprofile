@@ -37,6 +37,12 @@ fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# Check if go is installed and error if not
+if ! command -v go &> /dev/null; then
+  echo "go is not installed. Please install go and try again: brew install go"
+  return
+fi
+
 if [ -d "$HOME/go/bin" ]; then
   export PATH=$PATH:$HOME/go/bin
 fi
