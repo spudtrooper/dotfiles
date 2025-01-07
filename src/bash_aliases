@@ -61,4 +61,4 @@ alias mypublicip='curl ifconfig.me'
 alias opendrop='python3 /Users/jdff/Library/Python/3.9/lib/python/site-packages/opendrop/__main__.py'
 alias flush_dns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias blackwidow="~/Projects/github/blackwidow/blackwidow"
-alias last_processes="ps -eo lstart,pid,command | sort -r"
+alias last_processes="ps -eo lstart,user,pid,command | sort -r"
