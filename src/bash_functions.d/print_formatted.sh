@@ -10,7 +10,7 @@ print_formatted() {
     local ext="${file##*.}"
     case "$ext" in
     "json")
-        jq "$file" .
+        cat "$file" | jq .
         ;;
     "yaml" | "yml")
         cat "$file" | python -c 'import yaml, sys; print(yaml.dump(yaml.load(sys.stdin), default_flow_style=False))'
