@@ -65,3 +65,4 @@ alias opendrop='python3 /Users/jdff/Library/Python/3.9/lib/python/site-packages/
 alias flush_dns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias blackwidow="~/Projects/github/blackwidow/blackwidow"
 alias last_processes="ps -eo lstart,user,pid,command | sort -r"
+alias package_scripts='cat ${1:-package.json} | jq ".scripts" | sort'
