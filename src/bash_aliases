@@ -66,3 +66,9 @@ alias flush_dns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias blackwidow="~/Projects/github/blackwidow/blackwidow"
 alias last_processes="ps -eo lstart,user,pid,command | sort -r"
 alias package_scripts='cat ${1:-package.json} | jq ".scripts" | sort'
+alias yarn_init_typescript='yarn init -y && \
+yarn add typescript @types/node commander && \
+yarn add -D ts-node @types/commander && \
+yarn tsc --init --outDir dist --rootDir src --esModuleInterop true --target ES2020 --module commonjs && \
+mkdir -p src'
+alias yarn_init_typescript=yarn_init_ts
