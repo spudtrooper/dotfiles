@@ -71,4 +71,5 @@ yarn add typescript @types/node commander && \
 yarn add -D ts-node @types/commander && \
 yarn tsc --init --outDir dist --rootDir src --esModuleInterop true --target ES2020 --module commonjs && \
 mkdir -p src'
-alias yarn_init_typescript=yarn_init_ts
+alias yarn_init_ts=yarn_init_typescript
+alias new_venv='python3 -m venv venv && source venv/bin/activate'

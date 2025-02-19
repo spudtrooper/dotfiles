@@ -34,6 +34,9 @@ fi
 if [[ -d "/Applications/google-cloud-sdk/bin" ]]; then
   export PATH=/Applications/google-cloud-sdk/bin:$PATH
 fi
+if [[ -d "/opt/homebrew/anaconda3/condabin" ]]; then
+  export PATH=$PATH:/opt/homebrew/anaconda3/condabin
+fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
