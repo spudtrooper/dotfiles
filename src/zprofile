@@ -5,6 +5,12 @@ export CLICOLOR=1
 . "$HOME/.bash_aliases"
 . "$HOME/.bash_prompt"
 . "$HOME/.bash_functions"
+for f in ~/.rcfiles.d/*.sh; do
+  if [[ -d $f ]]; then
+    continue
+  fi
+  . "$f"
+done
 
 if [[ -f "$HOME/.bash_localrc" ]]; then
   . "$HOME"/.bash_localrc

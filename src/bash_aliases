@@ -73,3 +73,5 @@ yarn tsc --init --outDir dist --rootDir src --esModuleInterop true --target ES20
 mkdir -p src'
 alias yarn_init_ts=yarn_init_typescript
 alias new_venv='python3 -m venv venv && source venv/bin/activate'
+alias lutely=/Users/jeff/Projects/lutely/github/experimental/jeff/cli/scripts/run.sh
+alias lutely_dev=/Users/jeff/Projects/lutely/github/experimental/jeff/cli/scripts/dev.sh
