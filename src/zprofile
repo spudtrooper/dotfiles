@@ -20,6 +20,10 @@ if [[ -f "$HOME/.awsrc" ]]; then
   . "$HOME"/.awsrc
 fi
 
+if [[ -f "$HOME/.l.d/init.sh" ]]; then
+  . "$HOME"/.l.d/init.sh
+fi
+
 
 export LSCOLORS=exfxcxdxbxegedabagacad
 
