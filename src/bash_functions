@@ -82,3 +82,28 @@ function evaljs() {
 
   node -e "console.log(($js_function)($json_input));"
 }
+
+sqs_count() {
+  local queue_url=$1
+  aws sqs get-queue-attributes \
+    --queue-url $queue_url \
+    --attribute-names ApproximateNumberOfMessages |
+    jq ".Attributes.ApproximateNumberOfMessages" -r
+}
+
+watch_n() {
+  local n=$1
+  if [[ -z "$n" ]]; then
+    echo "Usage: watch_n <n> <command>"
+    return 1
+  fi
+  shift
+
+  echo
+  echo "Paste after running this..."
+  echo
+  echo watch -n "$n" \"source ~/.zprofile\; $@\"
+  echo
+
+  echo watch -n "$n" \"source ~/.zprofile\; $@\" | pbcopy
+}

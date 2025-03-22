@@ -75,3 +75,5 @@ alias lutely=/Users/jeff/Projects/lutely/github/experimental/jeff/cli/scripts/ru
 alias lutely_dev=/Users/jeff/Projects/lutely/github/experimental/jeff/cli/scripts/dev.sh
 alias blaze=bazel
 alias al=awslocal
+
+alias sqs-ls='aws sqs list-queues | jq ".QueueUrls[]" -r'
