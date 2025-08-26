@@ -5,12 +5,14 @@ export CLICOLOR=1
 . "$HOME/.bash_aliases"
 . "$HOME/.bash_prompt"
 . "$HOME/.bash_functions"
-for f in ~/.rcfiles.d/*.sh; do
-  if [[ -d $f ]]; then
-    continue
-  fi
-  . "$f"
-done
+if [[ -d ~/.rcfiles.d ]]; then
+  for f in ~/.rcfiles.d/*.sh; do
+    if [[ -d $f ]]; then
+        continue
+    fi
+    . "$f"
+  done
+fi
 
 if [[ -f "$HOME/.bash_localrc" ]]; then
   . "$HOME"/.bash_localrc
@@ -34,6 +36,10 @@ if [[ -d "$ANDROID_HOME/" ]]; then
   export PATH=$PATH:$ANDROID_HOME/tools/bin
   export PATH=$PATH:$ANDROID_HOME/platform-tools
 fi
+if [[ -d /opt/homebrew/bin ]]; then
+  export PATH=$PATH:/opt/homebrew/bin
+fi
+
 if [[ -d $BASHGPT/bin/Release ]]; then
   export PATH=$PATH:$BASHGPT/bin/Release
 fi
@@ -51,6 +57,9 @@ if [[ -d "/Applications/google-cloud-sdk/bin" ]]; then
 fi
 if [[ -d "/opt/homebrew/anaconda3/condabin" ]]; then
   export PATH=$PATH:/opt/homebrew/anaconda3/condabin
+fi
+if [[ -d "$HOME/apps/platform-tools" ]]; then
+  export PATH=$PATH:$HOME/apps/platform-tools
 fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -75,6 +84,10 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 if [[ -d "/opt/homebrew/opt/postgresql@16/bin" ]]; then
   export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+fi
+
+if [[ -d "/opt/homebrew/opt/postgresql@17/bin" ]]; then
+  export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 fi
 
 # Creates an alias for every file in ~/.bash_functions.d with extension .sh using the
