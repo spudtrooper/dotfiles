@@ -62,7 +62,7 @@ if [[ -d "$HOME/apps/platform-tools" ]]; then
   export PATH=$PATH:$HOME/apps/platform-tools
 fi
 
-if [[ =d "/opt/local/bin" ]]; then
+if [[ -d "/opt/local/bin" ]]; then
   export PATH=/opt/local/bin:$PATH
 fi
 if [[ -d "/opt/local/sbin" ]]; then
